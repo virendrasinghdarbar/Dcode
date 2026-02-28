@@ -9,26 +9,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 //import net.dcode.myinsta.myinsta.enums.Role;
+import lombok.Setter;
 
-@Data
-@Table(name = "users")
 @Entity
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "users")
 public class UserRegister {
 
-    @Id
+    @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;   // ✅ Primary Key
 
-    //@NotBlank(message="Name is required")
     private String name;
-
-   // @Email(message="Invalid email")
-    @Column(unique = true)
     private String email;
-
-  //  @NotBlank(message="Password required")
     private String password;
 
+    // getters & setters
 }

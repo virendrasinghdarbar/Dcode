@@ -1,6 +1,7 @@
 package net.dcode.myinsta.myinsta.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +31,9 @@ public class UserController {
     public String login(@RequestParam String email,
                         @RequestParam String password) {
         return userService.login(email, password);
+    }
+     @GetMapping("/home")
+    public String homePage() {
+        return "Home here";
     }
 }
